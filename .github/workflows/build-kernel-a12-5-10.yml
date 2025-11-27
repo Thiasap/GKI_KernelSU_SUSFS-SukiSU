@@ -26,7 +26,7 @@ on:
           - Stable(标准)
           - Dev(开发)
           - Other(其他/指定)
-        default: Dev(开发)
+        default: Stable(标准)
       # kernelsu_branch_other:
       #   description: "如果选择了 “其他”，请指定您的自定义分支"
       #   required: false
@@ -44,17 +44,17 @@ on:
         description: '是否开启KPM功能?'
         required: true
         type: boolean
-        default: true
+        default: false
       get_manager:
         description: '是否同时获取最新KSU管理器?（实验性功能，报错请关闭）'
         required: true
         type: boolean
-        default: true
+        default: false
       BBG:
         description: "是否启用内核层面阻止对关键分区/设备节点的非法写入(LSM)？"
         required: true
         type: boolean
-        default: false
+        default: true
 jobs:
   build-kernel-a12-5-10:
     uses: ./.github/workflows/kernel-a12-5.10.yml
